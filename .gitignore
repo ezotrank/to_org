@@ -1,0 +1,5 @@
+.gems
+WEB-INF/
+/bin/rackup
+/public/favicon.ico
+/public/robots.txt
