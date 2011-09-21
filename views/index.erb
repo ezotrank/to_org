@@ -1,0 +1,41 @@
+<% @posts.each do |post| %>
+  <div class="post" <%= 'style="background-color: #CC9966;"' if post.private %> id="post_<%= post.id %>">
+    <div class="inline">
+      <div class="title">
+        <a href="/post/<%= post.url %>"><%= post.title.capitalize %></a>
+      </div>
+      <div class="actions">
+        <% if admin? %>
+          <a href="/post/<%= post.id %>" class="delete">Delete</a>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<script>
+  $(document).ready(function() {
+
+  $.fn.getClassInList = function(list){
+       for(var i = 0; i < list.length; i++)
+       {
+          if($(this).hasClass(list[i]))
+             return list[i];
+       }
+       return "";
+  }
+
+  $('.delete,.put').click(function() {
+    var f = document.createElement('form');
+    $(this).after($(f).attr({
+      method: 'post',
+      action: $(this).attr('href')
+    }).append('<input type="hidden" name="_method" value="' 
+          + $(this).getClassInList(['put', 'delete']).toUpperCase() 
+          + '" />'));
+    $(f).submit();
+    return false;
+  });
+
+});
+</script>

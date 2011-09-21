@@ -1,0 +1,3 @@
+<% Settings.generate_config("http://#{request.env['HTTP_HOST']}/post_by_emacs").each_pair do |key, value| %>
+  <%= key %>: <%= value %></br>
+<% end %>

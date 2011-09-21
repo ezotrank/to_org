@@ -1,0 +1,23 @@
+body {
+    font-family: 'Inconsolata', sans-serif;
+}
+
+.post {
+    border-style: dotted;
+    border-width:1px;
+    margin-left:auto;
+    margin-right:auto;
+    width:70%;
+    text-align: left;
+}
+
+.post .inline {
+    margin: 5px;
+}
+.title {
+    font-size: 25px;
+}
+
+.content {
+    font-size: 18px;
+}
