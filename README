@@ -1,0 +1,8 @@
+Simple install:
+sudo gem install google-appengine bundle
+git clone git://github.com/ezotrank/to_org.git
+appcfg.rb generate_app some_project_name
+cd some_project_name
+cp ../to_org/* .
+cp ../to_org/.git .
+cp ../to_org/.gitignore .
